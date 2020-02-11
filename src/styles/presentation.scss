@@ -157,3 +157,14 @@ svg.cross path {
   stroke-width: .2em;
   vector-effect: non-scaling-stroke;
 }
+
+.stacking {
+  display: grid;
+  > * {
+    grid-area: 1/1/span 1/span 1;
+  }
+}
+
+.shadow {
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
+}

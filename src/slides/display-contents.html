@@ -1,0 +1,57 @@
+<p-slide>
+  <h2 class="center">Do you know</h2>
+  <p-fragment>
+    <h1 class="center">
+      <code>display: contents</code> ?
+      <br><br>
+      🤔
+    </h1>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Elements become ghosts! 👻</h3>
+  <div class="two-columns">
+    <pre><code class="language-css">.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}</code>
+<p-fragment><code class="language-css">.purple {
+  display: contents;
+}</code></p-fragment></pre>
+    <aside class="stacking align-center">
+      <img src="img/d-block.svg" class="shadow"
+        alt="Grid layout, two columns; one orange element on the left, one purple on the right, containing two other blocks (green and blue)">
+      <p-fragment>
+        <img src="img/d-contents.svg" style="display: block;"
+          alt="Adding display: contents to the previous layout, the purple elements 'dissolves' and the green and blue elements are placed like they're children of the wrapper grid">
+      </p-fragment>
+    </aside>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">
+    It's like <code>display: none</code> for the element, but <em>not</em> its descendants
+  </h2>
+</p-slide>
+<p-slide>
+  <h2 class="center">
+    But&hellip; there's a problem.
+  </h2>
+  <h2 class="center">
+    <p-fragment>
+      Most browsers takes that too literally.
+    </p-fragment>
+  </h2>
+</p-slide>
+<p-slide>
+  <picture>
+    <img src="img/caniuse-d-contents.png" style="width: 100%;"
+      alt="Caniuse.com screenshot showing that all browsers - except Firefox - remove the elements with display: contents from the accessibility tree. As of February 2020">
+  </picture>
+</p-slide>
+<p-slide>
+  <h1 class="center">How much does CSS affect accessibility?<br>🤕</h1>
+  <p-fragment>
+    <h4 class="center">There's <code>display: none</code>, but what else?</h4>
+  </p-fragment>
+</p-slide>
