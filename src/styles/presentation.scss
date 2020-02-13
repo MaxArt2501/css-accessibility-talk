@@ -172,3 +172,55 @@ svg.cross path {
 .shadow {
   box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
 }
+
+.display-showcase {
+  display: flex;
+  align-items: baseline;
+  padding: 0;
+  margin: 0;
+  font-size: 150%;
+
+  li {
+    text-align: center;
+  }
+  figure {
+    margin: 0;
+  }
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: .2em;
+    padding: 0 .2em;
+    border-block-start: .1em solid;
+  }
+  small {
+    font-size: 50%;
+  }
+}
+
+.sample-a {
+  aside {
+    text-align: center;
+  }
+  span {
+    display: inline-block;
+    position: relative;
+    font-size: 800%;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: .5;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -.2em;
+      left: .05em;
+      right: .05em;
+      height: .1em;
+      border: .05em solid #f60;
+      border-block-start-style: none;
+    }
+  }
+  li {
+    font-size: 150%;
+  }
+}
