@@ -1,0 +1,62 @@
+<p-slide>
+  <h1 class="center">How do screen readers read a page?</h1>
+</p-slide>
+<p-slide>
+  <svg viewBox="0 0 80 60">
+    <rect x="1" y="1" width="78" height="10" fill="none" stroke="#f60" rx="1"/>
+    <rect x="1" y="13" width="14" height="48" fill="none" stroke="#60f" rx="1"/>
+    <rect x="60" y="13" width="19" height="20" fill="none" stroke="#6f0" rx="1"/>
+    <rect x="60" y="35" width="19" height="16" fill="none" stroke="#f06" rx="1"/>
+    <rect x="17" y="13" width="41" height="48" fill="none" stroke="#aaa" rx="1"/>
+  </svg>
+</p-slide>
+<p-slide>
+  <pre class="big self-center language-css"><code>@media screen and (min-width: 1025px) {
+  #app {
+    display: grid;
+    grid-template-columns: 15% auto 20%;
+    grid-template-area: "head head head"
+                        "nav  main side"
+                        "nav  main ads";
+  }
+}</code></pre>
+</p-slide>
+<p-slide>
+  <pre class="big language-html self-center"><code>&lt;div id="app">
+  &lt;header>...&lt;/header>
+  &lt;nav>...&lt;/nav>
+  &lt;aside>...&lt;/aside>
+  &lt;aside class="ads">...&lt;/aside>
+  &lt;main>...&lt;/main>
+  &lt;footer>...&lt;/footer>
+&lt;/div></code></pre>
+</p-slide>
+<p-slide>
+  <svg viewBox="0 0 80 60">
+    <rect x="1" y="1" width="78" height="10" fill="none" stroke="#f60" rx="1"/>
+    <rect x="1" y="13" width="14" height="48" fill="none" stroke="#60f" rx="1"/>
+    <rect x="60" y="13" width="19" height="20" fill="none" stroke="#6f0" rx="1"/>
+    <rect x="60" y="35" width="19" height="16" fill="none" stroke="#f06" rx="1"/>
+    <rect x="17" y="13" width="41" height="48" fill="none" stroke="#aaa" rx="1"/>
+    <circle cx="40" cy="6" r="2"/>
+    <path d="M40,6Q20,15 7,35Q50,20 70,20Q78,30 70,40Q60,45 40,48" stroke="#000" stroke-dasharray="3 1" fill="none"/>
+    <circle cx="40" cy="48" r="2"/>
+  </svg>
+</p-slide>
+<p-slide>
+  <div class="two-columns align-center">
+    <svg viewBox="0 0 80 160" style="height: 12em;">
+      <rect x="6" y="6" width="68" height="10" fill="none" stroke="#f60" rx="1"/>
+      <rect x="6" y="18" width="68" height="10" fill="none" stroke="#60f" rx="1"/>
+      <rect x="6" y="30" width="68" height="100" fill="none" stroke="#aaa" rx="1"/>
+      <rect x="6" y="132" width="68" height="20" fill="none" stroke="#6f0" rx="1"/>
+      <rect x="6" y="154" width="68" height="5" fill="none" stroke="#f06" rx="1"/>
+      <rect x="2" y="2" width="76" height="156" fill="none" stroke="currentColor" rx="5" stroke-width="3"/>
+      <circle cx="40" cy="11" r="2"/>
+      <path d="M40,11V158" stroke="#000" stroke-dasharray="3 1" fill="none"/>
+    </svg>
+    <p-fragment>
+      <h3 class="center">One more reason to build mobile-first!</h3>
+    </p-fragment>
+  </div>
+</p-slide>
