@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-45 -60 500 400">
+  <g fill="none" stroke="black">
+    <path d="M176,277.187h-176v-169h180l108.187,-108.187 53.74,53.74 -57.983,57.983 68.589,68.589 -72.832,72.832z"
+      stroke-width="2"/>
+    <line x1="68" y1="108.187" x2="68" y2="277.187"/>
+    <line x1="234.447" y1="53.74" x2="288.187" y2="107.48"/>
+    <rect x="6.5" y="118.187" width="55" height="149" rx="20"/>
+    <rect x="75" y="98.187" width="76.5" height="10" stroke-width="2"/>
+    <path d="M95,277.187v-75h4a75,75 0 0 1 75,75h-75v-75"/>
+    <g transform="translate(245.75 53.74) rotate(-45)">
+      <rect width="60" height="60" rx="8"/>
+    </g>
+    <path d="M135,108.187v30q0,37 20,37 20,0 20,-37v-30"/>
+    <g transform="translate(199.38 271.767) rotate(-13.053)">
+      <path d="M0,0q-3.5,-25 -3.5,-30 0,-29 34,-29 34,0 34,29 0,5 -3.5,30"/>
+    </g>
+    <g transform="translate(305.158 227.688) rotate(-45)">
+      <path d="M0,0v-30q0,-36 18.5,-36 18.5,0 18.5,36v30"/>
+    </g>
+  </g>
+</svg>

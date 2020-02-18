@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Accessibility... with style</title>
+  <base href="..">
+  <link rel="shortcut icon" href="img/ts.png" type="image/png">
+  <link rel="stylesheet" href="vendor/prismjs/themes/prism-okaidia.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <link rel="stylesheet" href="css/presentation.css">
+</head>
+
+<body>
+  <p-deck>
+    <p-slide class="cover">
+  <h3>
+    Accessibility&hellip;<br>
+    with style!
+  </h3>
+  <div>
+    <img src="img/cssday.svg" alt="Logo of CSS Day">
+    <small>Faenza, 2020-03-13</small>
+  </div>
+</p-slide>
+<p-slide class="justify-start">
+  <img src="img/logo-antreem-border.svg" alt="Antreem logo" class="antreem-logo">
+  <div class="my-data">
+    <img src="img/maxart.jpg" alt="My face" class="my-face">
+    <h2>Massimo Artizzu</h2>
+    <p>
+      Web dev &amp; architect<br>
+      at <a href="https://antreem.com">Antreem</a>
+    </p>
+  </div>
+  <div class="my-info">
+    <h4>
+      <img src="img/twitter.svg" alt="Twitter logo"> /
+      <img src="img/github.svg" alt="GitHub logo">
+      @MaxArt2501
+    </h4>
+  </div>
+</p-slide>
+<p-slide class="center">
+  <h3>You can find these slides at</h3>
+  <img src="img/qr-slides.svg" alt="QR Code for the presentation's link" style="height: 7em; margin: -.5em 0 .5em;">
+  <small>
+    <a href="https://maxart2501.github.io/css-accessibility-talk/css-day/">
+      maxart2501.github.io/css-accessibility-talk/css-day/
+    </a>
+  </small>
+</p-slide>
+    <p-slide>
+  <h2 class="center">Do you know</h2>
+  <p-fragment>
+    <h1 class="center">
+      <code>display: contents</code> ?
+      <br><br>
+      🤔
+    </h1>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Elements become ghosts! 👻</h3>
+  <div class="two-columns">
+    <pre><code class="language-css">.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}</code>
+<p-fragment><code class="language-css">.purple {
+  display: contents;
+}</code></p-fragment></pre>
+    <aside class="stacking align-center">
+      <img src="img/d-block.svg" class="shadow"
+        alt="Grid layout, two columns; one orange element on the left, one purple on the right, containing two other blocks (green and blue)">
+      <p-fragment>
+        <img src="img/d-contents.svg" style="display: block;"
+          alt="Adding display: contents to the previous layout, the purple elements 'dissolves' and the green and blue elements are placed like they're children of the wrapper grid">
+      </p-fragment>
+    </aside>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">
+    It's like <code>display: none</code> for the element, but <em>not</em> its descendants
+  </h2>
+</p-slide>
+<p-slide>
+  <h2 class="center">
+    But&hellip; there's a problem.
+  </h2>
+  <h2 class="center">
+    <p-fragment>
+      Most browsers takes that too literally.
+    </p-fragment>
+  </h2>
+</p-slide>
+<p-slide>
+  <picture>
+    <img src="img/caniuse-d-contents.png" style="width: 100%;"
+      alt="Caniuse.com screenshot showing that all browsers - except Firefox - remove the elements with display: contents from the accessibility tree. As of February 2020">
+  </picture>
+</p-slide>
+<p-slide>
+  <h1 class="center">How much does CSS affect accessibility?<br>🤕</h1>
+  <p-fragment>
+    <h4 class="center">There's <code>display: none</code>, but what else?</h4>
+  </p-fragment>
+</p-slide>
+    <p-slide>
+  <h3 class="our-header">Did you know that&hellip;</h3>
+  <p-fragment>
+    <h2 class="center"><code>Hz</code> and <code>kHz</code> are CSS units?</h2>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h2 class="center">Planned for&hellip;</h2>
+  <div class="two-columns">
+    <p-fragment>
+      <aside class="relative center" style="padding: 1em 0;">
+        <b>CSS Aural module</b>
+        <p-fragment>
+          <svg class="cross covering" viewBox="0 0 20 20" preserveAspectRatio="none"><path d="M1,1L19,19M1,19L19,1"/></svg>
+        </p-fragment>
+      </aside>
+    </p-fragment>
+    <p-fragment>
+      <aside class="relative center" style="padding: 1em 0;">
+        <b>CSS Speech module</b>
+        <p-fragment>
+          <svg class="cross covering" viewBox="0 0 20 20" preserveAspectRatio="none"><path d="M1,1L19,19M1,19L19,1"/></svg>
+        </p-fragment>
+      </aside>
+    </p-fragment>
+  </div>
+</p-slide>
+    <p-slide>
+  <h2 class="center">Accessibility isn't just about blindness</h2>
+  <p-fragment>
+    <h4 class="center">It's also in the small things</h4>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <div class="two-columns align-center">
+    <h2 class="our-header">&hellip; too small.</h2>
+    <img src="img/too-small.webp" alt="Asian man squinting his eyes trying to read a very small note">
+  </div>
+</p-slide>
+<p-slide class="center">
+  <h4>Is your <code>font-size</code></h4>
+  <p-fragment>
+    <h1>big enough?</h1>
+  </p-fragment>
+</p-slide>
+<p-slide class="center">
+  <div class="two-columns align-center">
+    <aside>
+      <h4 class="our-header"><code>font-size: 12pt</code></h4>
+      <p>👍</p>
+      <p-fragment>1pt = ?? px 🤔</p-fragment>
+    </aside>
+    <img src="img/typewriter.svg" alt="A stylized typewriter">
+  </div>
+</p-slide>
+<p-slide>
+  <ul class="display-showcase self-center">
+    <li>
+      <p-fragment>
+        <figure>
+          <img src="img/crt.svg" alt="Icon of a CRT monitor" style="width: 1.72em;">
+          <figcaption>
+            <span>14"</span>
+            <small>800&times;600</small>
+            <small>0.36mm</small>
+          </figcaption>
+        </figure>
+      </p-fragment>
+    </li>
+    <li>
+      <p-fragment>
+        <figure>
+          <img src="img/laptop.svg" alt="Icon of an old laptop" style="width: 1.7em;">
+          <figcaption>
+            <span>15"</span>
+            <small>1024&times;768</small>
+            <small>0.3mm</small>
+          </figcaption>
+        </figure>
+      </p-fragment>
+    </li>
+    <li>
+      <p-fragment>
+        <figure>
+          <img src="img/lcd.svg" alt="Icon of a small LCD display" style="width: 1.85em;">
+          <figcaption>
+            <span>19"</span>
+            <small>1440&times;960</small>
+            <small>0.29mm</small>
+          </figcaption>
+        </figure>
+      </p-fragment>
+    </li>
+    <li>
+      <p-fragment>
+        <figure>
+          <img src="img/mobile.svg" alt="Icon of an old smartphone" style="width: .7em;">
+          <figcaption>
+            <span>4.5"</span>
+            <small>360&times;640</small>
+            <small>0.16mm</small>
+          </figcaption>
+        </figure>
+      </p-fragment>
+    </li>
+    <li>
+      <p-fragment>
+        <figure>
+          <img src="img/lcd-big.svg" alt="Icon of a large LCD display" style="width: 2.54em;">
+          <figcaption>
+            <span>28"</span>
+            <small>2560&times;1440</small>
+            <small>0.24mm</small>
+          </figcaption>
+        </figure>
+      </p-fragment>
+    </li>
+    <li>
+      <p-fragment>
+        <figure>
+          <img src="img/mobile-big.svg" alt="Icon of a modern, large smartphone" style="width: .8em;">
+          <figcaption>
+            <span>6.5"</span>
+            <small>1242&times;2688</small>
+            <small>0.16mm</small>
+          </figcaption>
+        </figure>
+      </p-fragment>
+    </li>
+  </ul>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">In a nutshell&hellip;</h3>
+  <div class="two-columns sample-a">
+    <aside>
+      <span>a</span>
+    </aside>
+    <ul>
+      <li><p-fragment>📄 2.54mm</p-fragment></li>
+      <li><p-fragment>🖥 1.77mm</p-fragment></li>
+      <li><p-fragment>📱1.07mm</p-fragment></li>
+    </ul>
+  </div>
+</p-slide>
+<p-slide>
+  <h1 class="center">
+    readability<br>
+    <p-fragment>></p-fragment><br>
+    <p-fragment>legibility</p-fragment><br>
+  </h1>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Use sufficient <code>line-height</code> too!</h3>
+  <p-fragment>
+    <p class="center"><code>normal</code> &asymp; 1.2</p>
+  </p-fragment>
+  <p-fragment>
+    <h1 class="center">It's <a href="https://www.w3.org/TR/WCAG21/#visual-presentationn">too low!</a></h1>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h1 class="center">Do you <a href="http://www.milliondollarhomepage.com/">pay</a> for screen pixels?!</h1>
+</p-slide>
+<p-slide>
+  <h1 class="our-header">One last thing&hellip;</h1>
+</p-slide>
+<p-slide class="center">
+  <div class="two-columns align-center">
+    <div>
+      <img src="img/drake-bad.webp" alt="Drake 'bad' meme" style="width: 7em">
+    </div>
+    <pre class="language-css big"><code>:root {
+  font-size: 20px;
+  line-height: 30px;
+}</code></pre>
+  </div>
+  <p-fragment>
+    <div class="two-columns align-center">
+      <div>
+        <img src="img/drake-good.webp" alt="Drake 'good' meme" style="width: 7em">
+      </div>
+    <pre class="language-css big"><code>:root {
+  font-size: 125%;
+  line-height: 1.5;
+}</code></pre>
+    </div>
+  </p-fragment>
+</p-slide>
+    <p-slide>
+  <h1 class="center">Speaking of content&hellip;</h1>
+</p-slide>
+<p-slide>
+  <p class="center">The oldest dev trick</p>
+  <pre class="big self-center"><code class="language-html">&lt;img src="image.png"></code></pre>
+  <p-fragment>
+    <pre class="big"><code class="language-css">img:not([alt]) {</code>
+  <p-fragment><code class="language-css">&:not([role]), &:not([role=presentation]) {</code>
+  <p-fragment><code class="language-css">outline: 1px solid red;</code></p-fragment>
+<code class="language-css">}</code></p-fragment>
+<code class="language-css">}</code></pre>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h1 class="center">But&hellip; have you ever used <em>these</em> images?</h1>
+  <p-fragment>
+    <div class="center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="height: 3em; margin: 0 .5em"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z" fill="currentColor"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 3em; margin: 0 .5em"><path d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z" fill="currentColor"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="height: 3em; margin: 0 .5em"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z" fill="currentColor"/></svg>
+    </div>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">But what's behind that?</h3>
+  <div class="self-center">
+    <pre class="big"><code class="language-html">&lt;i class="fa fa-home">&lt;/i></code></pre>
+    <p-fragment style="display: block;">
+      <pre class="big"><code class="language-css">.fa-home::before {
+  content: '\f015';
+}</code></pre>
+    </p-fragment>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">Screen readers <em>do</em> announce generated content</h2>
+  <p-fragment><p class="center">(except for IE)</p></p-fragment>
+  <p-fragment><h2 class="center">&hellip; but not <em>that!</em></h2></p-fragment>
+  <p-fragment><h4 class="center">Or they use the Unicode name if available</em></h4></p-fragment>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">So you either:</h2>
+  <ul class="self-center">
+    <li>
+      <p-fragment>☝️ put <code>aria-hidden="true"</code>, or</p-fragment>
+    </li>
+    <li>
+      <p-fragment>✌️ <code>aria-label="home"</code> in the markup</p-fragment>
+    </li>
+  </ul>
+  <p-fragment>
+    <h4 class="center">&hellip; but this isn't CSS!</h4>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">Alternative text for CSS Generated Content</h2>
+  <pre class="big self-center"><code class="language-css">.icon-home::before {
+  content: '\f015'</code><p-fragment><code class="language-css"> / 'home';</code></p-fragment>
+<code class="language-css">}</code></pre>
+</p-slide>
+<p-slide>
+  <support-table chrome="77" firefox="" safari="">Alternative text for CSS Generated Content</support-table>
+</p-slide>
+<p-slide>
+  <h1 class="center">Just two gotchas 🤫</h1>
+</p-slide>
+<p-slide class="center">
+  <h1>Use with moderation</h1>
+  <h3>CSS Generated Content shouldn't usually contain&hellip; content!</h3>
+</p-slide>
+<p-slide class="center">
+  <h1>It can disrupt your build task</h1>
+  <h3>CSS isn't the right place for translations</h3>
+</p-slide>
+    <p-slide>
+  <h1 class="center">How do screen readers read a page?</h1>
+</p-slide>
+<p-slide>
+  <svg viewBox="0 0 80 60">
+    <rect x="1" y="1" width="78" height="10" fill="none" stroke="#f60" rx="1"/>
+    <rect x="1" y="13" width="14" height="48" fill="none" stroke="#60f" rx="1"/>
+    <rect x="60" y="13" width="19" height="20" fill="none" stroke="#6f0" rx="1"/>
+    <rect x="60" y="35" width="19" height="16" fill="none" stroke="#f06" rx="1"/>
+    <rect x="17" y="13" width="41" height="48" fill="none" stroke="#aaa" rx="1"/>
+  </svg>
+</p-slide>
+<p-slide>
+  <pre class="big self-center language-css"><code>@media screen and (min-width: 1025px) {
+  #app {
+    display: grid;
+    grid-template-columns: 15% auto 20%;
+    grid-template-area: "head head head"
+                        "nav  main side"
+                        "nav  main ads";
+  }
+}</code></pre>
+</p-slide>
+<p-slide>
+  <pre class="big language-html self-center"><code>&lt;div id="app">
+  &lt;header>...&lt;/header>
+  &lt;nav>...&lt;/nav>
+  &lt;aside>...&lt;/aside>
+  &lt;aside class="ads">...&lt;/aside>
+  &lt;main>...&lt;/main>
+  &lt;footer>...&lt;/footer>
+&lt;/div></code></pre>
+</p-slide>
+<p-slide>
+  <svg viewBox="0 0 80 60">
+    <rect x="1" y="1" width="78" height="10" fill="none" stroke="#f60" rx="1"/>
+    <rect x="1" y="13" width="14" height="48" fill="none" stroke="#60f" rx="1"/>
+    <rect x="60" y="13" width="19" height="20" fill="none" stroke="#6f0" rx="1"/>
+    <rect x="60" y="35" width="19" height="16" fill="none" stroke="#f06" rx="1"/>
+    <rect x="17" y="13" width="41" height="48" fill="none" stroke="#aaa" rx="1"/>
+    <circle cx="40" cy="6" r="2"/>
+    <path d="M40,6Q20,15 7,35Q50,20 70,20Q78,30 70,40Q60,45 40,48" stroke="#000" stroke-dasharray="3 1" fill="none"/>
+    <circle cx="40" cy="48" r="2"/>
+  </svg>
+</p-slide>
+<p-slide>
+  <div class="two-columns align-center">
+    <svg viewBox="0 0 80 160" style="height: 12em;">
+      <rect x="6" y="6" width="68" height="10" fill="none" stroke="#f60" rx="1"/>
+      <rect x="6" y="18" width="68" height="10" fill="none" stroke="#60f" rx="1"/>
+      <rect x="6" y="30" width="68" height="100" fill="none" stroke="#aaa" rx="1"/>
+      <rect x="6" y="132" width="68" height="20" fill="none" stroke="#6f0" rx="1"/>
+      <rect x="6" y="154" width="68" height="5" fill="none" stroke="#f06" rx="1"/>
+      <rect x="2" y="2" width="76" height="156" fill="none" stroke="currentColor" rx="5" stroke-width="3"/>
+      <circle cx="40" cy="11" r="2"/>
+      <path d="M40,11V158" stroke="#000" stroke-dasharray="3 1" fill="none"/>
+    </svg>
+    <p-fragment>
+      <h3 class="center">One more reason to build mobile-first!</h3>
+    </p-fragment>
+  </div>
+</p-slide>
+  </p-deck>
+  <div role="progressbar" class="presentation-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+  <div role="toolbar" class="presentation-toolbar">
+    <button type="button" class="toggle-mode" title="Toggle speaker mode" aria-label="Toggle speaker mode (Alt-M)">
+      <svg viewBox="0 0 1 1"><path stroke-width="0.1" stroke="currentColor" fill="none" d="M.05 .5h.6v-.45h-.6v.9h.6v-.45M.75 .05h.25M.75 .2h.25M.75 .35h.25"/></svg>
+    </button>
+    <button type="button" class="fullscreen" title="Toggle fullscreen mode" aria-label="Toggle fullscreen mode">
+      <svg viewBox="0 0 1 1"><g stroke="currentColor" fill="none" stroke-width="0.1">
+        <path d="M.05 .3v-.25h.25M.7 .05h.25v.25M.95 .7v.25h-.25M.3 .95h-.25v-.25"/>
+        <path d="M.05 .3h.25v-.25M.7 .05v.25h.25M.95 .7h-.25v.25M.3 .95v-.25h-.25"/>
+      </g></svg>
+    </button>
+  </div>
+  <nav class="presentation-nav">
+    <button type="button" class="previous" title="Go backward" aria-label="Go backward"></button>
+    <button type="button" class="next" title="Go forward" aria-label="Go forward"></button>
+  </nav>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/presentation.js"></script>
+  <script defer src="vendor/prismjs/prism.js"></script>
+  <script defer src="vendor/prismjs/components/prism-typescript.js"></script>
+</body>
+
+</html>
