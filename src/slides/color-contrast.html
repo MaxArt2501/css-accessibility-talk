@@ -1,0 +1,180 @@
+<p-slide class="justify-start">
+  <h1 class="meme-text uppercase">About colors&hellip;</h1>
+  <video src="img/barfing-rainbows.webm" autoplay muted loop class="full-media" alt="Gnome barfing a rainbow, from 'Gravity Falls'"></video>
+</p-slide>
+<p-slide>
+  <h2 class="center">Are you sure your text has enough</h2>
+  <h1 class="stacking uppercase center">
+    <span style="color: #ddd;">contrast?</span>
+    <p-fragment>contrast?</p-fragment>
+  </h1>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">You might know that&hellip;</h3>
+  <p class="center">Contrast ratio for:</p>
+  <ul class="self-center" style="font-size: 150%;">
+    <li>👍 AA: 3.0</li>
+    <li>🙌 AAA: 4.5</li>
+  </ul>
+</p-slide>
+<p-slide>
+  <h1 class="center">But what's this "contrast ratio"?</h1>
+  <img src="img/oooo-aaaa.webp" style="margin-block-start: -1.5em; height: 7em;"
+    alt="Dudes yelling aggressively at each other, from asdfmovie 3">
+</p-slide>
+<p-slide class="justify-around">
+  <img src="img/rgb-to-srgb.svg" alt="Formula to convert a color from the RGB space to sRGB" style="height: 2.55em;">
+  <img src="img/srgb-to-luminance.svg" alt="Formula to get the luminance from a color in the sRGB space" style="height: 1em;">
+  <img src="img/contrast-ratio.svg" alt="Formula to compute the RGB space to sRGB" style="height: 2.39em;">
+</p-slide>
+<p-slide>
+  <h3 class="center">We have <code>hsl()</code></h3>
+  <h2 class="center">Why do we need <em>luminance</em>?</h2>
+</p-slide>
+<p-slide>
+  <div class="stacking color-disc">
+    <svg viewBox="-1 -1 2 2" style="height: 10em;">
+      <path d="M0,0L0,-1A1,1 0 0 1 .866,-.5z" fill="hsl(0,100%,50%)"></path>
+      <path d="M0,0L.866,-.5A1,1 0 0 1 .866,.5z" fill="hsl(60,100%,50%)"></path>
+      <path d="M0,0L.866,.5A1,1 0 0 1 0,1z" fill="hsl(120,100%,50%)"></path>
+      <path d="M0,0L0,1A1,1 0 0 1 -.866,.5z" fill="hsl(180,100%,50%)"></path>
+      <path d="M0,0L-.866,.5A1,1 0 0 1 -.866,-.5z" fill="hsl(240,100%,50%)"></path>
+      <path d="M0,0L-.866,-.5A1,1 0 0 1 0,-1z" fill="hsl(300,100%,50%)"></path>
+    </svg>
+    <p-fragment>
+      <code>50%</code>
+      <code>50%</code>
+      <code>50%</code>
+      <code>50%</code>
+      <code>50%</code>
+      <code>50%</code>
+    </p-fragment>
+    <p-fragment>
+      <svg viewBox="-1 -1 2 2" style="height: 10em;">
+        <path d="M0,0L0,-1A1,1 0 0 1 .866,-.5z" fill="#545454"></path>
+        <path d="M0,0L.866,-.5A1,1 0 0 1 .866,.5z" fill="#efefef"></path>
+        <path d="M0,0L.866,.5A1,1 0 0 1 0,1z" fill="#cacaca"></path>
+        <path d="M0,0L0,1A1,1 0 0 1 -.866,.5z" fill="#d8d8d8"></path>
+        <path d="M0,0L-.866,.5A1,1 0 0 1 -.866,-.5z" fill="#2a2a2a"></path>
+        <path d="M0,0L-.866,-.5A1,1 0 0 1 0,-1z" fill="#6d6d6d"></path>
+      </svg>
+    </p-fragment>
+    <p-fragment>
+      <code>33%</code>
+      <code>94%</code>
+      <code>79%</code>
+      <code>85%</code>
+      <code>16%</code>
+      <code>43%</code>
+    </p-fragment>
+  </div>
+</p-slide>
+<p-slide>
+  <div class="two-columns">
+    <aside>
+      <div class="color-block" style="background: #00f; color: #fff;">#0000ff</div>
+      <div class="color-block" style="background: #00f; color: #000;">#0000ff</div>
+    </aside>
+    <p-fragment>
+      <div class="color-contrast">✅ 8.59</div>
+      <div class="color-contrast">🚫 2.44</div>
+    </p-fragment>
+  </div>
+</p-slide>
+<p-slide>
+  <div class="two-columns">
+    <aside>
+      <div class="color-block" style="background: #0f0; color: #fff;">#00ff00</div>
+      <div class="color-block" style="background: #0f0; color: #000;">#00ff00</div>
+    </aside>
+    <p-fragment>
+      <div class="color-contrast">🚫 1.37</div>
+      <div class="color-contrast">✅ 15.3</div>
+    </p-fragment>
+  </div>
+</p-slide>
+<p-slide>
+  <div class="two-columns">
+    <aside>
+      <div class="color-block" style="background: #f00; color: #fff;">#ff0000</div>
+      <div class="color-block" style="background: #f00; color: #000;">#ff0000</div>
+    </aside>
+    <p-fragment>
+      <div class="color-contrast">🚫 4.00</div>
+      <div class="color-contrast">✅ 5.25</div>
+    </p-fragment>
+  </div>
+  <p-fragment><img src="img/vega.webp" alt="A confused Vincent Vega, from Pulp Fiction" class="vega"></p-fragment>
+</p-slide>
+<p-slide>
+  <div class="two-columns center">
+    <aside><div style="background: red; color: white; padding: .25em; width: 8em; margin-inline-start: auto;">white on red</div></aside>
+    <aside><div style="background: red; color: black; padding: .25em; width: 8em; margin-inline-end: auto;">black on red</div></aside>
+  </div>
+  <img src="img/womanyellingcat.jpg" alt="'Woman yelling at a cat' meme" style="width: 18em;">
+</p-slide>
+<p-slide>
+  <div class="two-columns">
+    <aside>
+      <div class="color-block" style="color: #f00; background: #fff;">#ff0000</div>
+      <div class="color-block" style="color: #f00; background: #000;">#ff0000</div>
+    </aside>
+    <p-fragment>
+      <div class="color-contrast">🚫 4.00</div>
+      <div class="color-contrast">✅ 5.25</div>
+    </p-fragment>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">There are other things to consider&hellip;</h2>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">WCAG 2.1 requirements</h2>
+  <div class="two-columns">
+    <aside>
+      <h3 class="center">Level AA</h3>
+      <ul class="self-center">
+        <li>Large text: 3.0 ratio</li>
+        <li>Other text: 4.5 ratio</li>
+        <li>Graphical objs: 3.0 ratio</li>
+      </ul>
+    </aside>
+    <aside>
+      <h3 class="center">Level AAA</h3>
+      <ul class="self-center">
+        <li>Large text: 4.5 ratio</li>
+        <li>Other text: 7.0 ratio</li>
+        <li>Graphical objs: no reqs</li>
+      </ul>
+    </aside>
+  </div>
+</p-slide>
+<p-slide>
+  <h1 class="center">&ldquo;Large&rdquo; text?</h1>
+  <ul class="self-center">
+    <li>☝️ 14pt and bold, or</li>
+    <li>✌️ 18pt or larger</li>
+  </ul>
+</p-slide>
+<p-slide>
+  <img src="img/disappointed.webp" alt="Animation of a disappointed guy" class="full-media">
+</p-slide>
+<p-slide>
+  <p style="font-family: Montserrat; font-variation-settings: 'wght' 100; color: #767676">Toss a coin to your witcher,<br>o valley of plenty</p>
+  <p style="font-family: Montserrat; font-variation-settings: 'wght' 400; font-size: 70%">
+    <p-fragment>
+      Toss a coin to your witcher,<br>o valley of plenty
+    </p-fragment>
+  </p>
+</p-slide>
+<p-slide>
+  <h2 class="center">DevTools can help!</h2>
+  <div class="two-columns align-center">
+    <aside style="text-align: end;">
+      <img src="img/chrome-contrast.png" alt="Chrome DevTools showing the contrast ratio for the text color" style="width: 7em;">
+    </aside>
+    <aside>
+      <img src="img/firefox-contrast.png" alt="Firefox Inspector showing the contrast ratio for the text color" style="width: 7em;">
+    </aside>
+  </div>
+</p-slide>
