@@ -164,6 +164,8 @@ svg.cross path {
 
 .stacking {
   display: grid;
+  justify-content: center;
+  align-items: center;
   > * {
     grid-area: 1/1/span 1/span 1;
   }
@@ -294,5 +296,25 @@ svg.cross path {
       top: 4.33em;
       left: -2.5em;
     }
+  }
+}
+
+.a-button {
+  white-space: nowrap;
+  background: var(--brand-color);
+  color: white;
+  border: none;
+  border-radius: .25em;
+  font-size: 150%;
+  padding: .15em .5em;
+  min-width: 5em;
+}
+.utter-this {
+  border: none;
+  background: none;
+  font-size: inherit;
+  font-family: inherit;
+  &::before {
+    content: '🔊';
   }
 }
