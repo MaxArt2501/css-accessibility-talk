@@ -24,3 +24,177 @@
     </div>
   </div>
 </p-slide>
+<p-slide class="center">
+  <h2>So, screen readers just inspect HTML+CSS?</h2>
+</p-slide>
+<p-slide class="center">
+  <h2>Not really&hellip;</h2>
+</p-slide>
+<p-slide>
+  <div class="two-columns align-center">
+    <pre><code class="language-html">&lt;nav>
+  &lt;ul>
+    &lt;li>&lt;a href="&hellip;">Home&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="&hellip;">Page&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="&hellip;">Site&lt;/a>&lt;/li>
+  &lt;/ul>
+&lt;/nav></code>
+
+<p-fragment><code class="language-css">ul {
+  display: flex;
+  list-style: none;
+  ...
+}</code></p-fragment></pre>
+    <p-fragment>
+      <nav class="nav-example">
+        <ul>
+          <li><a href="javascript:;">Home</a></li>
+          <li><a href="javascript:;">Page</a></li>
+          <li><a href="javascript:;">Site</a></li>
+        </ul>
+      </nav>
+    </p-fragment>
+  </div>
+</p-slide>
+<p-slide>
+  <nav class="nav-example" style="width: 50%; margin: 0 auto;">
+    <ul>
+      <li><a href="javascript:;">Home</a></li>
+      <li><a href="javascript:;">Page</a></li>
+      <li><a href="javascript:;">Site</a></li>
+    </ul>
+  </nav>
+  <p class="center">VoiceOver on Mac</p>
+  <table class="simple-table">
+    <thead>
+      <tr>
+        <th><img style="height: 2em" src="img/chrome.svg" alt="chrome logo"></th>
+        <th><img style="height: 2em" src="img/firefox.svg" alt="firefox logo"></th>
+        <th><img style="height: 2em" src="img/safari.svg" alt="safari logo"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <p-fragment>
+            <ul style="list-style: disc; text-align: left;">
+              <li>list</li>
+              <li>item count</li>
+              <li>link index</li>
+            </ul>
+          </p-fragment>
+        </td>
+        <td>
+          <p-fragment>
+            <ul style="list-style: disc; text-align: left;">
+              <li>list</li>
+              <li>item count</li>
+              <li>link index</li>
+            </ul>
+          </p-fragment>
+        </td>
+        <td>
+          <p-fragment>¯\_(ツ)_/¯</p-fragment>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</p-slide>
+<p-slide>
+  <img src="img/confused.webp" alt="A confused man blinking his eyes" class="full-media">
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Screen readers inspect&hellip;</h3>
+  <div class="stacking the-swap">
+    <p-fragment>
+      <figure>
+        <figcaption>DOM+CSS</figcaption>
+        <img src="img/dom.svg" alt="Representation of a DOM tree">
+        <p-fragment>
+          <svg class="cross covering" viewBox="0 0 20 20" preserveAspectRatio="none"><path d="M1,1L19,19M1,19L19,1"/></svg>
+        </p-fragment>
+      </figure>
+    </p-fragment>
+    <p-fragment>
+      <figure>
+        <figcaption>The Accessibility Tree</figcaption>
+        <img src="img/accessibility-tree.svg" alt="Representation of an accessibility tree">
+      </figure>
+    </p-fragment>
+  </div>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">The Accessibility Tree</h3>
+  <p class="center">Many elements are mapped 1-1:</p>
+  <ul class="self-center">
+    <li>👉 <code>&lt;nav></code> → <samp>navigation</samp></li>
+    <li>👉 <code>&lt;header></code> → <samp>banner</samp></li>
+    <li>👉 <code>&lt;ul></code>, <code>&lt;ol></code> → <samp>list</samp></li>
+    <li>👉 <code>&lt;a></code> → <samp>link</samp></li>
+    <li>👉 &hellip;</li>
+  </ul>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">The Accessibility Tree</h3>
+  <div class="center">Others are <em>flattened</em>:</div>
+  <pre class="language-html big self-center"><code>It's &lt;em>really&lt;/em> important</code></pre>
+  <samp class="self-center">paragraph<br>
+    &nbsp;&nbsp;> text <em style="color: #60f">It's</em><br>
+    &nbsp;&nbsp;> text <em style="color: #60f">really</em><br>
+    &nbsp;&nbsp;> text <em style="color: #60f">important</em><br>
+  </samp>
+</p-slide>
+<p-slide>
+  <h2 class="our-header">The Accessibility Tree</h2>
+  <p class="center">And others are <em>expanded</em>:</p>
+  <samp class="self-center">video<br>
+    &nbsp;&nbsp;> button <em style="color: #60f">Play</em><br>
+    &nbsp;&nbsp;> button <em style="color: #60f">Mute</em><br>
+    &nbsp;&nbsp;> slider<br>
+    &nbsp;&nbsp;> graphic<br>
+  </samp>
+</p-slide>
+<p-slide>
+  <div class="accessibility-cycle">
+    <p-fragment>
+      <img src="img/chrome.svg" alt="chrome logo">
+      <img src="img/firefox.svg" alt="firefox logo">
+      <img src="img/safari.svg" alt="safari logo">
+    </p-fragment>
+    <p-fragment>🌳</p-fragment>
+    <p-fragment>♿️</p-fragment>
+    <p-fragment>👆 👄 ⌨️</p-fragment>
+    <svg viewBox="0 0 10 10">
+      <path d="M0,5A5,5 0 1 1 5,10l-.5,-.5 .5,-.5A4,4 0 1 0 1,5Z"></path>
+    </svg>
+    <span>Accessibility feedback cycle</span>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">A good web developer should take care of the accessibility tree that comes out of the DOM</h2>
+</p-slide>
+<p-slide>
+  <h3 class="center">&hellip; but <em>how</em> is the tree generated?</h3>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Browsers and <em>heuristics</em></h3>
+  <div class="self-center">
+    <ul>
+      <li>
+        <p-fragment>👉 tables used for layouts;</p-fragment>
+      </li>
+      <li>
+        <p-fragment>👉 hidden content or&hellip;</p-fragment>
+      </li>
+      <li>
+        <p-fragment>👉 &hellip; placed far away;</p-fragment>
+      </li>
+      <li>
+        <p-fragment>👉 &hellip;</p-fragment>
+      </li>
+    </ul>
+  </div>
+</p-slide>
+<p-slide>
+  <h2 class="center">DevTools to the rescue 🦺</h2>
+</p-slide>

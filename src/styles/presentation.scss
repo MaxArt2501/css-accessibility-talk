@@ -318,3 +318,125 @@ svg.cross path {
     content: '🔊';
   }
 }
+
+.nav-example {
+  background: rebeccapurple;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: .25em .5em;
+  }
+}
+
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+
+  td, th {
+    padding: .25em 0;
+  }
+
+  tbody > tr {
+    border-top: .125em solid;
+  }
+
+  tr > :not(:first-child) {
+    border-left: .125em solid;
+  }
+}
+
+.the-swap {
+  text-align: center;
+  position: relative;
+
+  figure {
+    position: relative;
+  }
+
+  img {
+    height: 6em;
+  }
+  p-fragment:last-child > figure {
+    background: white;
+  }
+}
+
+.accessibility-cycle {
+  align-self: center;
+  width: 10em;
+  height: 10em;
+  border-radius: 5em;
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+
+  svg, span {
+    grid-area: 1 / 1 / span 2 / span 2;
+  }
+  span {
+    align-self: center;
+    justify-self: center;
+    width: min-content;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  img {
+    height: 1em;
+  }
+
+  path {
+    fill: var(--brand-color);
+    transform: rotate(45deg);
+    transform-origin: 5px 5px;
+  }
+  p-fragment {
+    font-size: 125%;
+    width: 3em;
+    height: 3em;
+    background-color: rgba(white, .75);
+    border: .1em solid var(--brand-color);
+    border-radius: .5em;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: -.5em;
+
+    &:nth-child(1) {
+      grid-area: 1 / 1 / span 1 / span 1;
+      align-self: start;
+      justify-self: start;
+    }
+    &:nth-child(2) {
+      grid-area: 1 / 2 / span 1 / span 1;
+      align-self: start;
+      justify-self: end;
+    }
+    &:nth-child(3) {
+      grid-area: 2 / 2 / span 1 / span 1;
+      align-self: end;
+      justify-self: end;
+    }
+    &:nth-child(4) {
+      grid-area: 2 / 1 / span 1 / span 1;
+      align-self: end;
+      justify-self: start;
+    }
+  }
+}
