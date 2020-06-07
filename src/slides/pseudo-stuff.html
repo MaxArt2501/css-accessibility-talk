@@ -63,6 +63,14 @@
   <support-table chrome="77" firefox="" safari="">Alternative text for CSS Generated Content</support-table>
 </p-slide>
 <p-slide>
+  <h3 class="center">Meanwhile, in Safari&hellip;</h3>
+  <pre class="self-center"><code class="language-css">.icon-home::before {
+  content: '\f015';
+  alt: 'home';
+}</code></pre>
+  <a class="center small" href="https://www.brucelawson.co.uk/2014/notes-on-draft-css-alt-property/">brucelawson.co.uk/2014/notes-on-draft-css-alt-property</a>
+</p-slide>
+<p-slide>
   <h1 class="center">Just two gotchas 🤫</h1>
 </p-slide>
 <p-slide class="center">
@@ -72,4 +80,14 @@
 <p-slide class="center">
   <h1>It can disrupt your build task</h1>
   <h3>CSS isn't the right place for translations</h3>
+</p-slide>
+<p-slide>
+  <h3 class="center">Although&hellip;</h3>
+  <pre class="self-center"><code class="language-html">&lt;i class="icon icon-home" data-meaning="Home">&lt;/i></code>
+
+<code class="language-css">.icon-home::before {
+  content: '\f015' / attr(data-meaning);
+}</code></pre>
+  <p-fragment class="center">(Too bad this <em>should</em> work, but doesn't&hellip;)</p-fragment>
+  <p-fragment class="center">(Just use <code>aria-label</code>, then.)</p-fragment>
 </p-slide>
