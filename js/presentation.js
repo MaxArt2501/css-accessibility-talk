@@ -26,3 +26,13 @@ customElements.define('support-table', class extends HTMLElement {
       }).join('');
   }
 });
+
+document.addEventListener('click', ({ target }) => {
+  const utterBtn = target.closest('[data-utter]');
+  if (utterBtn) {
+    const utterance = new SpeechSynthesisUtterance(utterBtn.dataset.utter);
+    const lang = utterBtn.closest('[lang]').lang;
+    utterance.lang = lang;
+    speechSynthesis.speak(utterance);
+  }
+});

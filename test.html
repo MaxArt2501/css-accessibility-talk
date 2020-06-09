@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Test Page</title>
+  <style>.icon-star::before {
+    content: '⭐️';
+  }</style>
+</head>
+<body>
+  <nav>
+    <ul style="list-style: none;">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>
+      Main title. Check it out!
+      <small>This is a subtitle</small>
+    </h1>
+  </header>
+  <main>
+    <div>Some interactive stuff</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing <em>elit</em>.
+      Minus veritatis similique obcaecati unde nisi. Porro fuga accusantium blanditiis ad obcaecati ipsum,
+      voluptatem impedit ab dolorem cum <span style="color: red;">incidunt</span>, earum, veniam harum.</p>
+    <p>Emmet helped me writing the lorem ipsum.</p>
+    <p>One star: <i class="icon-star" aria-label="Triangulated pentagon"></i></p>
+    <ul style="list-style: none;">
+      <li><span aria-hidden="false">👉</span> Lorem</li>
+      <li><span aria-hidden="false">👉</span> Ipsum</li>
+      <li><span aria-hidden="false">👉</span> Dolor</li>
+    </ul>
+  </main>
+  <footer>
+    <form action="post">
+      <p>Subscribe to our newsletter</p>
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email">
+      <button type="submit" style="text-transform: uppercase;">Add</button>
+    </form>
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/support">Support</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
