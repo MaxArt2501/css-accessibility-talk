@@ -27,3 +27,12 @@ body {
     color: var(--controls-color);
   }
 }
+
+.language-css {
+  .atrule {
+    color: white;
+    > .rule {
+      color: #c586c0;
+    }
+  }
+}
