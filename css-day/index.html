@@ -15,16 +15,9 @@
 </head>
 
 <body>
-  <p-deck>
-    <p-slide class="cover">
-  <h3>
-    Accessibility&hellip;<br>
-    with style!
-  </h3>
-  <div>
-    <img src="img/cssday.svg" alt="Logo of CSS Day">
-    <small>The World, 2020-06-19</small>
-  </div>
+  <p-deck style="--sliding-duration: 100ms; --slide-aspect-ratio: 1.6">
+    <p-slide style="--slide-bg: #201e1c">
+  <img src="img/cssday-cover.jpg" alt="CSS Day Online / Accessibilità... con stile" class="full-media">
 </p-slide>
 <p-slide class="justify-start">
   <img src="img/logo-antreem-border.svg" alt="Antreem logo" class="antreem-logo">
@@ -38,8 +31,9 @@
   </div>
   <div class="my-info">
     <h4>
-      <img src="img/twitter.svg" alt="Twitter logo"> /
-      <img src="img/github.svg" alt="GitHub logo">
+      <a href="https://twitter.com/MaxArt2501"><img src="img/twitter.svg" alt="Twitter logo"></a> /
+      <a href="https://github.com/MaxArt2501"><img src="img/github.svg" alt="GitHub logo"></a> /
+      <a href="https://dev.to/maxart2501"><img src="img/dev-to.svg" alt="dev.to logo"></a>
       @MaxArt2501
     </h4>
   </div>
@@ -1001,6 +995,24 @@
       <a href="https://www.w3.org/TR/WCAG21/#dfn-relative-luminance">w3.org/TR/WCAG21/#dfn-relative-luminance</a>
     </li>
   </ul>
+</p-slide>
+    <p-slide>
+  <h1 class="center">
+    That's all, folks!<br>👋
+  </h1>
+</p-slide>
+<p-slide>
+  <h3 class="center final-link">
+    <a href="https://maxart2501.github.io/css-accessibility-talk/css-day/">
+      maxart2501.github.io/css-accessibility-talk/css-day/
+    </a>
+    <img src="img/qr-slides.svg" alt="QR Code for the presentation's link">
+  </h3>
+</p-slide>
+<p-slide>
+  <pre class="self-center big"><code class="language-css">@each $question in $questions {
+  @include answer($question);
+}</code></pre>
 </p-slide>
   </p-deck>
   <div role="progressbar" class="presentation-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
