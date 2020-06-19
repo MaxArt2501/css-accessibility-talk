@@ -2,6 +2,10 @@ import { registerElements, setStyleRoot } from '../vendor/p-slides/index.js';
 
 const deck = document.querySelector('p-deck');
 
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  deck.style.setProperty('--sliding-duration', '0s');
+}
+
 function handleHash() {
   const hash = location.hash.slice(1);
   const params = new URLSearchParams(hash);
